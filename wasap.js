@@ -104,7 +104,19 @@ async function connectToWhatsApp() {
             fs.writeFileSync(filepath, JSON.stringify(client_message, null, 2))
             console.log(`Pesan berhasil disimpan di ${filepath}`)
 
+            if(sender === '6289676718142@s.whatsapp.net' && message.includes('yang')) {
+                const reaction_msg = {
+                    react: {
+                        text: "❤",
+                        key: msg.key
+                    }
+                }
+
+                await sock.sendMessage(sender, reaction_msg)
             
+            } else {
+                console.log(sender)
+            }
 
             // if (message.includes('info') || message.includes('ada')) {
             //     await delay(3000)
@@ -127,17 +139,12 @@ async function connectToWhatsApp() {
 
             //
 
-            await delay(3000)
-            await sock.readMessages([msg.key])
-            await delay(2000)
+            // await delay(3000)
+            // await sock.readMessages([msg.key])
+            // await delay(2000)
 
             //react
-            // const reaction_msg = {
-            //     react: {
-            //         text: "❤",
-            //         key: msg.key
-            //     }
-            // }
+
 
             //serlok
 
@@ -146,8 +153,6 @@ async function connectToWhatsApp() {
 
             // await sock.sendPresenceUpdate('composing', sender)
             // await sock.sendMessage(sender, { text: 'This is automatic reply from our system. Please wait for our response\n\nThank you' })
-
-            // await sock.sendMessage(sender, reaction_msg)
         }
     })
 }
