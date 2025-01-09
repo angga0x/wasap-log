@@ -1,0 +1,18 @@
+{
+  "name": "cs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.9",
+    "dayjs": "^1.11.13",
+    "moment-timezone": "^0.5.46",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
